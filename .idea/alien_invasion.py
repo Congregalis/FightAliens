@@ -2,6 +2,7 @@
 # -*- coding:utf-8 -*-
 import sys
 import pygame
+import time
 
 from pygame.sprite import Group
 from settings import Settings
@@ -20,7 +21,15 @@ def run_game():
     screen = pygame.display.set_mode(
         (ai_settings.screen_width, ai_settings.screen_height)
     )
+    gameIcon = pygame.image.load("images/icon.png")
+    pygame.display.set_icon(gameIcon)
     pygame.display.set_caption("打洗外星人")
+    # pygame.mixer.init()
+    # music_file = 'music/lrh-xjzw.mp3'
+    # pygame.mixer.music.load(music_file)
+    # pygame.mixer.music.set_volume(0.2)
+    # pygame.mixer.music.play(1)
+    # time.sleep(10)
 
     stats = GameStats(ai_settings)
     sb = ScoreBoard(ai_settings, screen, stats)
