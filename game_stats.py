@@ -15,7 +15,10 @@ class GameStats():
 
     # 读取最高分
     def read_high_score(self):
-        file_handle = open('high_score.txt', 'r')
-        high_score = int(file_handle.read())
-        file_handle.close()
+        try:
+            file_handle = open('high_score.txt', 'r')
+            high_score = int(file_handle.read())
+            file_handle.close()
+        except IOError:
+            high_score = 0
         return high_score
